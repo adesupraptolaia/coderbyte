@@ -17,6 +17,11 @@ func combination(n, k int) int {
 	return factorial(n) / (factorial(k) * factorial(n-k))
 }
 
+// (2n n) ==> all of posibility, 
+// actualy 2n!/n!n! ==>  because you have 2n brackets, and you have n open_bracket and n close_bracket
+// ===============
+// (2n n+1) ==> all of bad bracket_combinations
+// you just need take n+1 bracket (from 2n bracket) to get bad bracket_combination
 func BracketCombinations(num int) int {
 	return combination(2*num, num) - combination(2*num, num+1)
 }
